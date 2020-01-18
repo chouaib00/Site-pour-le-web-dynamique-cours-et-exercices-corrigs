@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ex1_tp3</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: grey" >
+	<h1 align="center" > Diaporama </h1>
+	<div align="center">
+	<img id="im" width="900px" height="300px" src="Jellyfish.jpg"><br>
+
+	<input type="button" id="b1" value=" << previous" onclick=" previous()"class="btn btn-dark" >
+	<input type="button" id="b2" value="play" onclick="play()" class="btn btn-primary">
+	<input type="button" id="b3" value="next >>" onclick="next()" class="btn btn-dark">
+	<script type="text/javascript">
+		var tab =new Array("Jellyfish.jpg","Desert.jpg","Hydrangeas.jpg");
+		var inn;
+		var i=0;
+		function play(){
+			if($("#b2").val()=="play"){
+				$("#b2").attr("value","pause");
+			inn=setInterval(function(){
+               if(i>=tab.length){	i=0;}
+               
+			$("#im").attr("src",tab[i])	;
+			i++;
+					},1000);
+		}
+		else {
+			$("#b2").attr("value","play");
+			clearInterval(inn);
+
+		}
+
+		}var i=0;
+		function next(){
+			
+			if(i>=tab.length){
+               i=0;
+			}
+			$("#im").attr("src",tab[i])	;
+			i++;
+					
+		}
+
+		var j=tab.length-1;
+        
+		function previous(){
+			
+			if(j<=0){
+               j=tab.length-1;
+			}
+			$("#im").attr("src",tab[j])	;
+			j--;
+					
+		}
+		
+	</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title> Afficher la table de multiplication d'un entier</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+function cliquer(n,l){
+ for(var i=1;i<l.value;i++){
+     document.write("<table border >");
+    document.write("<tr>");
+    document.write("<td>"+n.value+" x "+i+" =</td>");
+    document.write("<td>"+(n.value*i)+"</td>");
+    document.write("</tr>");
+      document.write("</table>");
+ }
+
+            }
+           
+
+</script>
+        <h4>La table de multiplication </h4>
+         <form name="form1">
+<label> saisie le nombre à multiplier</label>	<input type="text" name="nombre">
+<label> saisir le nombre de lignes</label>	<input type="text" name="lines">
+	<br>
+	<input type="submit" onclick="cliquer(form1.nombre,form1.lines)">
+</form>
+
+    </body>
+</html>

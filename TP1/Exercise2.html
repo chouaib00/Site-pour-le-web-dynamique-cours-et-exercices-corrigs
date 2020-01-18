@@ -1,0 +1,26 @@
+<html>
+<body>
+<script>
+document.write("<h3>Deviser la chaine en mots</h3>");
+var ph=prompt("1*entrez une phrase");
+ var tab=ph.split(" ");
+ for(var i in tab)
+ 
+ document.write("mot "+(parseInt(i)+1)+": "+tab[i]+"<br>");
+ var deb=prompt("2-1*entrez l'indice de debut");
+ var fn=prompt("2-1*entrez l'indice de fin");
+document.write("<h3>la chaine entre l'indice de debut et de fin:</h3>");
+ document.write(ph.substring(deb,fn)+"<br>");
+ 
+  var nom=prompt("2-1*entrez le nom");
+  var table=nom.split(" ");
+  document.write("<h3 color:red>le nom abrege est: </h3>")
+  document.write(table[0].toUpperCase()+"."); 
+ for(i=1;i<table.length;i++)
+ document.write(table[i].toUpperCase().charAt(0)+".");
+
+  
+  
+ </script>
+</body>
+</html> 

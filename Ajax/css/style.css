@@ -1,0 +1,15 @@
+.conteneur{
+	height:200px;
+	border-style:solid;
+	width: 400px;
+	overflow:auto;
+	border-color:orange;
+	
+
+}
+#msg{
+	border:outset;
+	word-wrap:break-word;
+	margin:10px;
+
+}

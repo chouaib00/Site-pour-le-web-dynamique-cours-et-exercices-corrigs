@@ -1,0 +1,66 @@
+#f1_container {
+  position: relative;
+  margin: 10px auto;
+  width: 800px;
+  height: 400px;
+  perspective: 1000;
+  -webkit-perspective: 700;
+  background: red;
+}
+ 
+#f1_card {
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: all 1.0s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: all 1s ease-in-out;
+ -webkit-transform-origin: right;
+ 
+}
+ 
+#f1_container:hover #f1_card {
+ 
+	-webkit-transform: rotateY(-180deg);
+}
+ 
+#f2_card {
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: all 1.0s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: all 1s ease-in-out;
+  -webkit-transform-origin: right;
+}
+#f1_container:hover #f2_card {
+	-webkit-transition-delay: 2s;
+	-webkit-transform: rotateY(-180deg);
+}
+ 
+.face {
+	position: absolute;
+	left: 100%;
+	bottom: 100%;
+	width: 400px;
+	height: 400px;
+	-webkit-backface-visibility: hidden;
+	z-index: 3;
+}
+ 
+.face.back {
+ -webkit-transform: rotateY(-180deg);
+}
+ 
+.face2 {
+  position: absolute;
+  left: 100%;
+  width: 400px;
+  height: 400px;
+  -webkit-backface-visibility: hidden;
+   z-index: 0;
+}
+ 
+.face2.back2 {
+  -webkit-transform: rotateY(-180deg);
+}

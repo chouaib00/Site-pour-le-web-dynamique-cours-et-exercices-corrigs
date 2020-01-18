@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .vert {
+        color:green;
+        }
+        .rouge {
+        color:red;
+        }
+
+    </style>
+</head>
+<body>
+<center>
+<table border="0">
+
+<tr><td> Pseudo </td> <td><input id="psd" /><span class="notif" id="spseudo"></span><br /></td></tr>
+    
+<tr><td> Mot de Pass </td> <td><input id="pw" type="password" /> <span id="spassword"></span><br /></td></tr>
+    
+<tr><td> Nom </td> <td><input id="nm" /> </td></tr>  
+    
+<tr><td> Prenom </td> <td> <input id="pr" /><br /></td></tr>
+    
+<tr><td> Date de Naissence </td> <td> <input id="ds" > <span id="sdatenaiss"> </span> <br /></td></tr>
+    
+<tr><td> Adresse E-mail </td> <td> <input id="eml"> <span id="sadrmail"></span> <br /></td></tr>
+    
+
+    </table>
+    <button id="bttvalide" > Valider</button>
+</center>
+    <script>
+        function valid_email()
+            {
+                str=document.getElementById("eml");
+                 var mailFormat=/^\w+([\.-]?\w+)*@\w+([/.-]?\w+)*(\.\w{2,3})+$/;
+                return mailFormat.test(str.value);
+            }
+            
+            
+            function dateNaissance(){
+                str=document.getElementById("ds");
+                 var RegExp= /(\d{2})\/(\d{2})\/(\d{4})/;
+                 return RegExp.test(str.value);
+                 
+            }
+            function passWord(){
+                str=document.getElementById("pw");
+                var motPass=/^(\w{6,})$/;
+                return motPass.test(str.value);
+            }
+            
+            function pseudo(){
+                str=document.getElementById("psd");
+                var ps=/^(([a-z]|\d){6,})$/i;
+              return ps.test(str.value);
+            }
+        
+       
+        
+            
+ document.querySelector("#bttvalide").addEventListener("click", function () {
+var span1=document.getElementById("spseudo");
+var span2=document.getElementById("spassword");
+var span3=document.getElementById("sdatenaiss");
+var span4=document.getElementById("sadrmail");
+if(pseudo()==true){
+                    span1.classList.add("vert");
+                    span1.classList.remove("rouge");
+                    
+                    span1.innerText = "Success";
+
+                }else {
+                    //span1.setAttribute("class", "rouge");
+                    span1.classList.add("rouge");
+                    span1.classList.remove("vert");
+                    span1.innerText = "Failed";
+                }
+    
+             if(passWord()==true){
+                    span2.classList.add("vert");
+                    span2.classList.remove("rouge");
+                    
+                    span2.innerText = "Success";
+
+                }else {
+                    //span1.setAttribute("class", "rouge");
+                    span2.classList.add("rouge");
+                    span2.classList.remove("vert");
+                    span2.innerText = "Failed";
+                }
+                
+                    if(dateNaissance()==true){
+                    span3.classList.add("vert");
+                    span3.classList.remove("rouge");
+                    
+                    span3.innerText = "Success";
+
+                }else {
+                    //span1.setAttribute("class", "rouge");
+                    span3.classList.add("rouge");
+                    span3.classList.remove("vert");
+                    span3.innerText = "Failed";
+                }
+                
+                 if(valid_email()==true){
+                    span4.classList.add("vert");
+                    span4.classList.remove("rouge");
+                    
+                    span4.innerText = "Success";
+
+                }else {
+                    //span1.setAttribute("class", "rouge");
+                    span4.classList.add("rouge");
+                    span4.classList.remove("vert");
+                    span4.innerText = "Failed";
+                }
+                
+            });
+           
+        
+      
+    </script>
+    </body>
+</html>

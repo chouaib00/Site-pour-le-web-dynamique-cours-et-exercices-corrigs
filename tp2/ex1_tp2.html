@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+	<title>Chronomètre</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+      .chronometre{
+        margin: auto ;
+        width: 300px;
+        text-align: center;
+        
+      }
+
+      .tim{
+      	margin: auto;
+      	width: 300px;
+      	border: 1px solid rgba(0,0,0,0.5);
+      	padding:5px 0;
+      	text-align: center;
+      	font-size: 1.5em;
+      	font-family: digital;
+      	margin-bottom: 10px;
+
+
+      }
+     
+      button{
+        background: #3498db;
+        color: #fff;
+        width: 70px;
+        border-radius: 5px;
+        line-height: 1.5em;
+        border: none
+      }
+     
+
+	</style>
+</head>
+<body>
+    <script>
+  var t;
+  var s=0,mn=0,h=0;
+
+  function start(){
+
+t = setInterval(function () {
+    var date = new Date(); 
+    h=date.getHours();
+    mn=date.getMinutes();
+    s=date.getSeconds();
+   
+ var x=document.getElementById("sp1");
+    x.innerHTML=h+"h";
+    var x1= document.getElementById("sp2");
+    x1.innerHTML=mn+"min";
+    var x2= document.getElementById("sp3");
+    x2.innerHTML=s+"s";
+    x.style.fontSize ="60px";
+    x1.style.fontSize="60px";
+    x2.style.fontSize="20px";
+}
+    ,1000);
+  }
+	function stop(){
+    
+    clearInterval(t);	
+	}
+</script>
+    <p id="date"></p>
+<div class="chronometre">
+  <div class="tim">
+  	<span id=sp1></span> :
+  	<span id=sp2></span> :
+  	<span id=sp3></span> 
+
+  </div>
+  <button id="start" onclick="start()">Start</button>
+  <button id="stop" onclick="stop()" >Stop</button>
+</div>
+
+  
+</body>
+</html>

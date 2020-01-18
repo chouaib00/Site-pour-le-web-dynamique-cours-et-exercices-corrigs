@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title></title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='jquery.min.js'></script>
+    </head>
+    
+
+<body>
+    <br><br><br><br>
+<div style="margin-left:30%;">
+</div>
+
+<script>
+
+if(document.cookie==''){
+$('div').append("<h1><b style='color:orange'>Bienvenue sur notre site</b></h1 ><b>C'est votre première visite, vous devez insérer vos identifiants !</b> <br><table style='margin-left:10%;'><tr><td>Nom:<td><input type='text' class='form-control'></tr><tr><td>Prénom:<td><input type='text' class='form-control'></tr></table><br><input type='button' value='Sauvegarder'style='margin-left:18%;'  class='btn btn-secondary'>");
+$("input[type='button']").on('click',function(){
+if($("input[type='text']:first").val()!='' && $("input[type='text']:last").val()!=''){
+nom='cookiebienvenu';
+var dt = new Date();
+
+var dtm=dt.getMonth()+1
+valuecookie=$("input[type='text']:first").val()+'-'+$("input[type='text']:last").val()+'-'+'1'+'-'+dt.getDate()+'/'+dtm+'/'+dt.getFullYear();
+dt.setTime(dt.getTime()+(50*24*60*60*1000))
+document.cookie=nom+'='+valuecookie+';expers='+dt.toUTCString();
+
+document.getElementsByTagName('div')[0].innerHTML='<b>Vous identifiants sont sauvegardée !<b>';}else alert('un ou ts les champs sont vides');
+})
+
+}else{
+var tab=document.cookie.split('=')
+var tab1=tab[1].split(';');
+var purcooki=tab1[0].split('-')
+if(purcooki[2]==1){
+document.getElementsByTagName('div')[0].innerHTML="<b><h1>Bienvenue M. "+purcooki[0]+" "+purcooki[1]+"</h1></b><b>C'est votre "+purcooki[2]+" ère visite . Dernière visite le "+purcooki[3]+"</b>"
+nom='cookiebienvenu';
+var dt = new Date();
+purcooki[2]++
+var dtm=dt.getMonth()+1
+valuecookie=purcooki[0]+'-'+purcooki[1]+'-'+purcooki[2]+'-'+dt.getDate()+'/'+dtm+'/'+dt.getFullYear();
+dt.setTime(dt.getTime()+(50*24*60*60*1000))
+document.cookie=nom+'='+valuecookie+';expers='+dt.toUTCString();
+}else{
+document.getElementsByTagName('div')[0].innerHTML="<b><h1>Bienvenue M. "+purcooki[0]+" "+purcooki[1]+"</h1></b><b>C'est votre "+purcooki[2]+" ème visite . Dernière visite le "+purcooki[3]+"</b>"
+nom='cookiebienvenu';
+var dt = new Date();
+purcooki[2]++
+var dtm=dt.getMonth()+1
+valuecookie=purcooki[0]+'-'+purcooki[1]+'-'+purcooki[2]+'-'+dt.getDate()+'/'+dtm+'/'+dt.getFullYear();
+dt.setTime(dt.getTime()+(50*24*60*60*1000))
+document.cookie=nom+'='+valuecookie+';expers='+dt.toUTCString();
+}
+
+}
+
+</script>
+    
+</body>
+</html>

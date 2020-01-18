@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+            Exercice 4
+        </title>
+    </head>
+    <body>
+       
+        <input type="button" onclick="nb_aleatoire()" value="cliquer ici!"> 
+        <script>
+            function nb_aleatoire(){
+            
+            solution = Math.floor(Math.random() * 1000) + 1;
+            console.log("(le nombre aléatoire est " + solution + ")");
+            var i=0,
+	trouve=0;
+do{
+	var nombreChoix = prompt("entrez un nombre entre 1 et 1000 SVP");
+	if(nombreChoix>solution)
+		console.log(nombreChoix+" est plus grand");
+	else  if(nombreChoix<solution)
+		console.log(nombreChoix+" est plus petit");
+	else
+	{
+		console.log("Bravo! le nombre est trouvé: "+solution);
+		console.log("vous avez trouvez en "+(i+1)+" essaies");
+		trouve=1;
+		break;
+	}
+	i++;
+}while(i<6);
+if(trouve===0)
+	console.log("Perdu... le nombre trouvé était: "+solution);
+            }
+        </script>
+    </body>
+</html>

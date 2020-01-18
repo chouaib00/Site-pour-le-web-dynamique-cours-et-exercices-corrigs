@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Get the month name from a particular date</title>
+<script>
+
+ function affiche_date(sep){
+ var now=new Date();
+ return  "<br><h5>La date est: "+now.getDate()+sep+(now.getMonth()+1)+sep+now.getFullYear()+"</h5>";
+ 
+ }
+ function affiche_nom_Mois(){
+ var no=new Date();
+var name=(no.getMonth()+1).toLocaleString();
+
+if (name==1)
+ return "le mois est Janvier et la date de system est:"+no.toLocaleString();
+ else
+if (name==2)
+ return "le mois est Fivrier et la date de system est:"+no.toLocaleString();
+ else
+if (name==3)
+ return "le mois est Mars et la date de system est:"+no.toLocaleString();
+ else if (name==4)
+ return "le mois est Avril et la date de system est:"+no.toLocaleString();
+ else
+ if (name==5)
+ return "le mois est May et la date de system est:"+no.toLocaleString();
+ else
+ if (name==6)
+ return "le mois est Juin et la date de system est:"+no.toLocaleString();
+ else
+ if (name==7)
+ return "le mois est Juillet et la date de system est:"+no.toLocaleString();
+ else
+if (name==8)
+ return "le mois est Aout et la date de system est:"+no.toLocaleString();
+ else
+ if (name==9)
+ return "le mois est Septembre et la date de system est:"+no.toLocaleString();
+ else
+ if (name==10)
+ return "le mois est Octobre et la date de system est:"+no.toLocaleString();
+  else
+ if (name==11)
+ return "le mois est Novembre et la date de system est:"+no.toLocaleString();
+else
+ if (name==12)
+ return "le mois est Decembre et la date de system est:"+no.toLocaleString();
+ else 
+ return "Ce Mois n'est pas correct";
+ }
+ /*function calcul_age(naiss){
+ var db=new Date();
+ return "votre age presque :"+(db.getFullYear()-naiss.getFullYear()+1)+" Ans";
+ }*/
+    function calculate_age(dt) { 
+           //  dob = new Date;
+    var diff_ms = Date.now() - dt.getTime();
+    var age_dt = new Date(diff_ms); 
+  
+    return "votre age presque :"+(Math.abs(age_dt.getUTCFullYear() - 1970))+" Ans";
+}
+  document.write(affiche_date("/"));
+
+  document.write(affiche_nom_Mois());
+  var na=new Date(1998,09,06);
+  document.write(calculate_age(na));
+    
+    </script>
+    </head>
+<body>
+</body>
+</html>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+ </script>
+</body>
+</html> 

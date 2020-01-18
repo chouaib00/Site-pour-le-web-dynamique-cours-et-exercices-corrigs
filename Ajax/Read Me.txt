@@ -1,0 +1,7 @@
+Web 4 All:
+
+1-Créer une base de données "test" dans phpMyadmin
+
+2-importer le fichier "message.sql" dans la base de données crée
+
+3-ouvrir la page index dans le LOCALHOST

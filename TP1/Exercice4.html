@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercice 4</title>
+</head>
+<body>
+<script type="text/javascript">
+	var tableau = new Array();
+
+function Etudiant(cne,nom,formation)
+{
+	this.cne=cne;
+	this.nom=nom;
+	this.formation=formation;
+	this.toString = toString;
+
+	function toString()
+	{
+		document.write("cne : "+this.cne+" nom : "+this.nom+" formation : "+this.formation+"<br>"); 
+	}
+}
+
+
+var Classe={
+
+	
+	ajouter : function(cne,nom,formation)
+	{
+		var nombre = prompt("entrez le nombre des etudiants");
+		for(var i=1;i<=nombre;i++)
+		{
+			var cne = prompt("entrez votre cne");
+			var nom = prompt("entrez votre nom");
+			var formation = prompt("entrez votre formation");
+			var e1 = new Etudiant(cne,nom,formation);
+			tableau[i]=e1;
+				
+		}
+		
+		
+
+	},
+	toString : function()
+	{
+		for(var i in tableau)
+		{
+			tableau[i].toString();
+		}
+	}
+};
+var c1 = Object.create(Classe);
+c1.ajouter();
+c1.toString();
+</script>
+
+
+</body>
+</html>
